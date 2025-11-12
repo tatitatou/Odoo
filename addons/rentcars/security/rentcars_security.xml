@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="rentcars_group_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="catefory_id" ref="base.module_category_inventory_cars"></field>
+        </record>
+        <record>
+        </record>
+    </data>
+</odoo>
