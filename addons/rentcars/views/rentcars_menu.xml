@@ -1,0 +1,10 @@
+<odoo>
+    <menuitem id="menu_rentcars" name="Rentcars !"/>
+    <record id="action_rentcars_vehicle" model="ir.actions.act_window">
+        <field name="name">Rentcars Vehicle</field>
+        <field name="res_model">rentcars.vehicle</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_rentcars_vehicle" name="Vehicle" parent="menu_rentcars" action="action_rentcars_vehicle" sequence="10"/>
+</odoo>

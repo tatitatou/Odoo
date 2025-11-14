@@ -9,6 +9,9 @@ class Vehicle(models.Model):
     active=fields.Boolean("Actif ?", default=True)
 
     immatriculation = fields.Char("Numberplate")
-    date_purchased = fields.date(string="Purchase date")
+    date_purchased = fields.Date(string="Purchase date")
     model = fields.Char("Model")
     thumbnail = fields.Binary("Thumbnail")
+    
+    def button_check_immatriculation(self):
+        return True
