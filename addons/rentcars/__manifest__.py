@@ -33,6 +33,7 @@ Outils de gestion de véhicules
         'security/ir.model.access.csv',
         'views/rentcars_menu.xml',
         'views/vehicle_views.xml' 
+        'views/vehicle_list_template.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

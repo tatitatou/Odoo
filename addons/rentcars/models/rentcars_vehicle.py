@@ -1,6 +1,8 @@
 #-*- coding: utf-8 -*-
 
 from odoo import fields, models
+import re
+from odoo.exceptions import ValidationError
 
 class Vehicle(models.Model):
     _name = 'rentcars.vehicle'
@@ -13,5 +15,15 @@ class Vehicle(models.Model):
     model = fields.Char("Model")
     thumbnail = fields.Binary("Thumbnail")
     
+    def _check_immatriculation(self):
+        self.ensure_one()
+        pattern = re.compile("\w{2}[0-9]{3}\w{2}$")
+        return pattern.match(self.immatriculation)
+    
     def button_check_immatriculation(self):
+        for vehicle in self:
+            if not vehicle.immatriculation:
+                raise (ValidationError("Please provide a numberplate for this car"))
+            if vehicle.immatriculation and not vehicle._check_immatriculation():
+                raise ValidationError("%s Numberplate is invalid" % (vehicle.immatriculation))
         return True
