@@ -38,7 +38,10 @@ Outils de gestion de véhicules
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        'demo/rentcars.vehicle.csv',
+        'demo/rentcars.garage.csv',
+        'demo/vehicle.xml',
+        'demo/garage.xml'
     ],
 }
 

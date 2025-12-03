@@ -36,6 +36,8 @@
                 <field name="model"/>
                 <field name="immatriculation"/>
                 <field name="date_purchased"/>
+                <field name="thumbnail" widget="image" options='{"size": [150,140]}'/>
+                <field name="garage_city"/>
             </list>
         </field>
 

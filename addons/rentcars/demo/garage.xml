@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <data>
+        <record id="xml_garage_110" model="rentcars.garage">
+            <field name="name">Pau</field>
+            <field name="active">1</field>
+            <field name="address_street">14, rue du pont</field>
+            <field name="address_zipcode">64000</field>
+            <field name="address_city">Pau</field>
+            <field name="places_max">50</field>
+            <field name="vehicle_ids" eval="[
+                (4, ref('xml_vehicle_111')),
+                (4, ref('xml_vehicle_112'))]"></field>
+        </record>
+    </data>
+</odoo>

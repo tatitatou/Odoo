@@ -18,6 +18,9 @@ class Vehicle(models.Model):
     thumbnail = fields.Binary("Thumbnail")
 
     garage_id = fields.Many2one("rentcars.garage",string="garage")
+    garage_city = fields.Char(related='garage_id.address_city', string="Lieu")
+
+    
     option_ids = fields.Many2many("rentcars.option",string="Option of vehicle")
     
     age_vehicle = fields.Integer(compute="_age_vehicle", string="Age of vehicle (years)")
