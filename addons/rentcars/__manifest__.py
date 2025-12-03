@@ -34,7 +34,9 @@ Outils de gestion de véhicules
         'views/rentcars_menu.xml',
         'views/vehicle_views.xml',
         'views/garage_views.xml',
-        'views/vehicle_list_template.xml'
+        'views/vehicle_list_template.xml',
+        'views/garage_kanban_view.xml',
+        'views/reparation_kanban_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

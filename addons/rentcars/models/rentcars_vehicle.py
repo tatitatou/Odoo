@@ -25,6 +25,20 @@ class Vehicle(models.Model):
     
     age_vehicle = fields.Integer(compute="_age_vehicle", string="Age of vehicle (years)")
     
+    state = fields.Selection([
+        ('broken','Broken Down'),
+        ('repaired', 'Being repaired'),
+        ('usable', 'Usabled')
+    ])
+    
+    repairing_status=fields.Selection([
+        ('arrived', 'Just arrived'),
+        ('diagnoses','Diagnosing'),
+        ('waiting', 'Waiting for parts'),
+        ('repairing', 'Repairing'),
+        ('finish', 'Finish')
+        ], string="Repairing status", default='arrived')
+    
     def _check_immatriculation(self):
         self.ensure_one()
         pattern = re.compile("\w{2}[0-9]{3}\w{2}$")

@@ -15,8 +15,11 @@
                             <field name="active"/>
                             <field name="date_purchased"/>
                             <field name="age_vehicle"/>
-                            <field name="immatriculation"/>
-                            <field name="option_ids" widget="many2many_tags"/>
+                            <field name="immatriculation" invisible='state != "usable"'/>
+                            <field name="option_ids" widget="many2many_chehkboxes" readonly="['|', 
+                                                                                                ('age_vehicle','>=','3'),
+                                                                                                ('state','!=','usable')]"/>
+                            <field name="state" widget="statubar" statubar_visible="broken, repaired, usable"/>
                         </group>
                     
                         <group name="group_column_right">
@@ -32,13 +35,18 @@
         <field name="name">Vehicle list</field>
         <field name="model">rentcars.vehicle</field>
         <field name="arch" type="xml">
-            <list>
+            <list decoration-success="state=='usable'">
                 <field name="model"/>
                 <field name="immatriculation"/>
+                <field name="state"/>
                 <field name="date_purchased"/>
-                <field name="thumbnail" widget="image" options='{"size": [150,140]}'/>
+                <field name="thumbnail" widget="image" options='{"size": [150, 140]}'/>
                 <field name="garage_city"/>
-            </list>
+               </list>
+               <field name="age_vehicle" avg="Moyenne d'âge des voiture" />
+               <field name="repairing_status" states="repaired"/>
+
+
         </field>
 
     </record>
