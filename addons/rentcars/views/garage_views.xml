@@ -10,9 +10,9 @@
                         <field name="active" />
                     </group>
                     <group name="group_column_right">
-                        <field name="city" />
-                        <field name="street" />
-                        <field name="zip_code" />
+                        <field name="address_city" />
+                        <field name="address_street" />
+                        <field name="address_zipcode" />
                         <field name="places_max" />
                     </group>
                 </group>
@@ -35,8 +35,8 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="adress_city"/>
-                <field name="adress_street"/>
+                <field name="address_city"/>
+                <field name="address_street"/>
             </list>
         </field>
 
