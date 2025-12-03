@@ -14,6 +14,9 @@ class Vehicle(models.Model):
     date_purchased = fields.Date(string="Purchase date")
     model = fields.Char("Model")
     thumbnail = fields.Binary("Thumbnail")
+
+    garage_id = fields.Many2one("rentcars.garage",string="garage")
+    option_ids = fields.Many2many("rentcars.option",string="Option of vehicle")
     
     def _check_immatriculation(self):
         self.ensure_one()
